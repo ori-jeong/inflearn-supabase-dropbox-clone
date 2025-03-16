@@ -32,7 +32,7 @@ export default function DropboxImage({ image }) {
       </div>
       {/* FileName */}
       <div>{image.name}</div>
-      <div>{formData(image.updated_at)}</div>
+      <div>수정된 시간: {formData(image.updated_at)}</div>
       <div className="absolute top-2 right-4">
         <IconButton
           onClick={() => {
