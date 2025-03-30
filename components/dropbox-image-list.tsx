@@ -3,7 +3,7 @@
 import { useQuery } from "@tanstack/react-query";
 import DropboxImage from "./dropbox-image";
 import { searchFiles } from "actions/storageActions";
-import { Spinner } from "node_modules/@material-tailwind/react";
+import { Spinner } from "@material-tailwind/react";
 
 export default function DropboxImageList({ searchInput }) {
   const searchImageQuery = useQuery({

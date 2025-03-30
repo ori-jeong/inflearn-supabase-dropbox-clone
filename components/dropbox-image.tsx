@@ -1,6 +1,6 @@
 "use client";
 
-import { IconButton, Spinner } from "node_modules/@material-tailwind/react";
+import { IconButton, Spinner } from "@material-tailwind/react";
 import { useMutation } from "@tanstack/react-query";
 import { getImageUrl } from "utils/supabase/storage";
 import { deleteFile } from "actions/storageActions";
