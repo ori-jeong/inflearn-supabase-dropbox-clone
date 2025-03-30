@@ -5,7 +5,6 @@ import { v4 as uuidv4 } from "uuid";
 
 function handleError(error) {
   if (error) {
-    console.log(error);
     throw error;
   }
 }
@@ -29,12 +28,11 @@ export async function uploadFile(formData: FormData) {
   // all(): 여러 파일을 한 번에 업로드 진행하기 위해 사용
   const results = await Promise.all(
     files.map((file) => {
-      // const ext = file.name.split(".").pop(); // 확장자 추출
-      //  const fileName = `${uuidv4()}.${ext}`; // UUID 기반 파일명 생성
-      console.log(file.name);
+      const ext = file.name.split(".").pop(); // 확장자 추출
+      const fileName = `${uuidv4()}.${ext}`; // UUID 기반 파일명 생성
       supabase.storage
         .from(process.env.NEXT_PUBLIC_STORAGE_BUCKET)
-        .upload(file.name, file, { upsert: true });
+        .upload(fileName, file, { upsert: true });
     })
   );
   return results;

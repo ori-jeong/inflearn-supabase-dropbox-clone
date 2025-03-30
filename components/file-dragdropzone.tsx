@@ -8,7 +8,6 @@ import { useCallback, useRef } from "react";
 import { useDropzone } from "react-dropzone";
 
 export default function FileDragDropZone() {
-  const fileRef = useRef(null);
   const uploadImageMutation = useMutation({
     mutationFn: uploadFile,
     onSuccess: () => {
@@ -19,7 +18,6 @@ export default function FileDragDropZone() {
   });
 
   const onDrop = useCallback(async (acceptedFiles) => {
-    // const file = acceptedFiles?.[0];
     if (acceptedFiles.length > 0 && acceptedFiles.length <= 10) {
       const formData = new FormData();
 
